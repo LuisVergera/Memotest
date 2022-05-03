@@ -1,4 +1,5 @@
 const grid = document.querySelector(".grid");
+//const cards = document.querySelectorAll("card");
 
 let round = 0;
 
@@ -64,9 +65,18 @@ function createCardGrid() {
     let card = document.createElement("img");
     card.setAttribute("src", "images/cards2.png");
     card.setAttribute("data-id", i);
+    card.setAttribute("class", "card");
+    card.addEventListener("click", flipCard);
     grid.appendChild(card);
   }
 }
+
+function flipCard() {
+  let cardId = this.getAttribute("data-id");
+  cardsChosen.push(cardDeck[cardId].name);
+  console.log(cardsChosen);
+}
+const cards = document.querySelectorAll(".card");
 
 function newRound() {
   round += 1;
@@ -76,3 +86,5 @@ function newRound() {
 }
 
 function checkMatch() {}
+
+let cardsChosen = [];
