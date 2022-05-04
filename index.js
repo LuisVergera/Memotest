@@ -54,6 +54,8 @@ let cardDeck = [
   },
 ];
 
+cardDeck.sort(() => 0.5 - Math.random());
+
 function beginGame() {
   //newRound();
   createCardGrid();
@@ -74,7 +76,8 @@ function createCardGrid() {
 function flipCard() {
   let cardId = this.getAttribute("data-id");
   cardsChosen.push(cardDeck[cardId].name);
-  console.log(cardsChosen);
+  this.setAttribute("src", cardDeck[cardId].img);
+  checkMatch();
 }
 const cards = document.querySelectorAll(".card");
 
@@ -85,6 +88,19 @@ function newRound() {
   displayCards();
 }
 
-function checkMatch() {}
+function checkMatch() {
+  let cardsChosen1 = cardsChosen[0];
+  let cardsChosen2 = cardsChosen[1];
+  if (cardsChosen.length === 2) {
+    if (cardsChosen1 === cardsChosen2) {
+      console.log("match");
+      cardsChosen = [];
+    } else {
+      cardsChosen1.setAttribute("src", "images/cards2.png");
+      cardsChosen2.setAttribute("src", "images/cards2.png");
+      cardsChosen = [];
+    }
+  }
+}
 
 let cardsChosen = [];
