@@ -1,5 +1,4 @@
 const grid = document.querySelector(".grid");
-//const cards = document.querySelectorAll("card");
 
 let round = 0;
 
@@ -57,7 +56,6 @@ let cardDeck = [
 cardDeck.sort(() => 0.5 - Math.random());
 
 function beginGame() {
-  //newRound();
   createCardGrid();
 }
 beginGame();
@@ -104,7 +102,7 @@ function checkMatch() {
         cardsChosen = [];
         cardsChosenId = [];
       }
-    }, 1000);
+    }, 500);
   }
 }
 
