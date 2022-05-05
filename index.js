@@ -80,13 +80,6 @@ function flipCard() {
 }
 const cards = document.querySelectorAll(".card");
 
-function newRound() {
-  round += 1;
-  resetGrid();
-  shuffleCards();
-  displayCards();
-}
-
 function checkMatch() {
   let cardsChosen1 = cardsChosen[0];
   let cardsChosen2 = cardsChosen[1];
