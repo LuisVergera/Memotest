@@ -97,6 +97,7 @@ function checkMatch() {
       if (cardsChosen1 === cardsChosen2) {
         console.log("match");
         cardsChosen = [];
+        cardsChosenId = [];
       } else {
         cards[cardsChosenId[0]].setAttribute("src", "images/cards2.png");
         cards[cardsChosenId[1]].setAttribute("src", "images/cards2.png");
