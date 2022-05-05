@@ -77,6 +77,7 @@ function flipCard() {
   cardsChosenId.push(cardId);
   this.setAttribute("src", cardDeck[cardId].img);
   checkMatch();
+  checkWin();
 }
 const cards = document.querySelectorAll(".card");
 
@@ -85,7 +86,10 @@ function checkMatch() {
   let cardsChosen2 = cardsChosen[1];
   if (cardsChosen.length === 2) {
     setTimeout(() => {
-      if (cardsChosen1 === cardsChosen2) {
+      if (
+        cardsChosen1 === cardsChosen2 &&
+        cardsChosenId[0] != cardsChosenId[1]
+      ) {
         console.log("match");
         cardsChosen = [];
         cardsChosenId = [];
