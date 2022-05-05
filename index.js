@@ -77,7 +77,6 @@ function flipCard() {
   cardsChosenId.push(cardId);
   this.setAttribute("src", cardDeck[cardId].img);
   checkMatch();
-  checkWin();
 }
 const cards = document.querySelectorAll(".card");
 
@@ -105,3 +104,9 @@ function checkMatch() {
 
 let cardsChosen = [];
 let cardsChosenId = [];
+
+function removeCards() {
+  while (grid.firstChild) {
+    grid.removeChild(grid.firstChild);
+  }
+}
