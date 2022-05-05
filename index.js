@@ -76,6 +76,7 @@ function createCardGrid() {
 function flipCard() {
   let cardId = this.getAttribute("data-id");
   cardsChosen.push(cardDeck[cardId].name);
+  cardsChosenId.push(cardId);
   this.setAttribute("src", cardDeck[cardId].img);
   checkMatch();
 }
@@ -92,15 +93,19 @@ function checkMatch() {
   let cardsChosen1 = cardsChosen[0];
   let cardsChosen2 = cardsChosen[1];
   if (cardsChosen.length === 2) {
-    if (cardsChosen1 === cardsChosen2) {
-      console.log("match");
-      cardsChosen = [];
-    } else {
-      cardsChosen1.setAttribute("src", "images/cards2.png");
-      cardsChosen2.setAttribute("src", "images/cards2.png");
-      cardsChosen = [];
-    }
+    setTimeout(() => {
+      if (cardsChosen1 === cardsChosen2) {
+        console.log("match");
+        cardsChosen = [];
+      } else {
+        cards[cardsChosenId[0]].setAttribute("src", "images/cards2.png");
+        cards[cardsChosenId[1]].setAttribute("src", "images/cards2.png");
+        cardsChosen = [];
+        cardsChosenId = [];
+      }
+    }, 1000);
   }
 }
 
 let cardsChosen = [];
+let cardsChosenId = [];
