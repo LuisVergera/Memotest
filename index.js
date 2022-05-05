@@ -102,7 +102,7 @@ function checkMatch() {
         cardsChosen = [];
         cardsChosenId = [];
       }
-    }, 500);
+    }, 750);
   }
 }
 
