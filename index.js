@@ -77,29 +77,35 @@ function flipCard() {
   cardsChosenId.push(cardId);
   this.setAttribute("src", cardDeck[cardId].img);
   checkMatch();
+  //enableClick();
 }
 const cards = document.querySelectorAll(".card");
 
 function checkMatch() {
+  disableClick();
   let cardsChosen1 = cardsChosen[0];
   let cardsChosen2 = cardsChosen[1];
-  if (cardsChosen.length === 2) {
-    setTimeout(() => {
+  let intervalId = setInterval(function () {
+    if (cardsChosen.length === 2) {
       if (
         cardsChosen1 === cardsChosen2 &&
         cardsChosenId[0] != cardsChosenId[1]
       ) {
+        clearInterval(intervalId);
         console.log("match");
         cardsChosen = [];
         cardsChosenId = [];
+        enableClick();
       } else {
+        clearInterval(intervalId);
         cards[cardsChosenId[0]].setAttribute("src", "images/cards2.png");
         cards[cardsChosenId[1]].setAttribute("src", "images/cards2.png");
         cardsChosen = [];
         cardsChosenId = [];
+        enableClick();
       }
-    }, 750);
-  }
+    }
+  }, 750);
 }
 
 let cardsChosen = [];
@@ -109,4 +115,12 @@ function removeCards() {
   while (grid.firstChild) {
     grid.removeChild(grid.firstChild);
   }
+}
+
+function disableClick() {
+  $(".card");
+}
+
+function enableClick() {
+  cards.onclick = checkMatch();
 }
