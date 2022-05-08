@@ -65,7 +65,8 @@ function createCardGrid() {
     let card = document.createElement("img");
     card.setAttribute("src", "images/cards2.png");
     card.setAttribute("data-id", i);
-    card.setAttribute("class", "card");
+    card.setAttribute("id", "card");
+    card.setAttribute("class", "cards");
     card.addEventListener("click", flipCard);
     grid.appendChild(card);
   }
@@ -77,14 +78,21 @@ function flipCard() {
   cardsChosenId.push(cardId);
   this.setAttribute("src", cardDeck[cardId].img);
   checkMatch();
+<<<<<<< Updated upstream
   checkWin();
+=======
+>>>>>>> Stashed changes
 }
-const cards = document.querySelectorAll(".card");
+const cards = document.getElementsByClassName("cards");
 
 function checkMatch() {
   let cardsChosen1 = cardsChosen[0];
   let cardsChosen2 = cardsChosen[1];
   if (cardsChosen.length === 2) {
+<<<<<<< Updated upstream
+=======
+    disableClick();
+>>>>>>> Stashed changes
     setTimeout(() => {
       if (
         cardsChosen1 === cardsChosen2 &&
@@ -99,9 +107,34 @@ function checkMatch() {
         cardsChosen = [];
         cardsChosenId = [];
       }
+<<<<<<< Updated upstream
     }, 750);
+=======
+    }, 1000);
+>>>>>>> Stashed changes
   }
 }
 
 let cardsChosen = [];
 let cardsChosenId = [];
+<<<<<<< Updated upstream
+=======
+
+function removeCards() {
+  while (grid.firstChild) {
+    grid.removeChild(grid.firstChild);
+  }
+}
+
+function disableClick() {
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].style.pointerEvents = "none";
+  }
+}
+
+function enableClick() {
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].style.pointerEvents = "auto";
+  }
+}
+>>>>>>> Stashed changes
