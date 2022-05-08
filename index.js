@@ -92,9 +92,11 @@ function checkMatch() {
         cardsChosenId[0] != cardsChosenId[1]
       ) {
         console.log("match");
+        cardsMatched++;
         cardsChosen = [];
         cardsChosenId = [];
         enableClick();
+        checkWin();
       } else {
         cards[cardsChosenId[0]].setAttribute("src", "images/cards2.png");
         cards[cardsChosenId[1]].setAttribute("src", "images/cards2.png");
@@ -124,5 +126,12 @@ function disableClick() {
 function enableClick() {
   for (let i = 0; i < cards.length; i++) {
     cards[i].style.pointerEvents = "auto";
+  }
+}
+
+let cardsMatched = 0;
+function checkWin() {
+  if (cardsMatched === cardDeck.length / 2) {
+    alert("Congratulations you are a true Saiyan!");
   }
 }

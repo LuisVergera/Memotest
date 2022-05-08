@@ -1,0 +1,20 @@
+{
+  "name": "memotest",
+  "version": "1.0.0",
+  "description": "Memotest game for r/argentina-programa",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisVergera/Memotest.git"
+  },
+  "author": "Luis Vergera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisVergera/Memotest/issues"
+  },
+  "homepage": "https://github.com/LuisVergera/Memotest#readme"
+}
