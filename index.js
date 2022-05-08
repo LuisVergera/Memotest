@@ -1,7 +1,7 @@
 const grid = document.querySelector(".grid");
 
 let round = 0;
-
+let cardsMatched = 0;
 let cardDeck = [
   {
     name: "broly",
@@ -54,11 +54,6 @@ let cardDeck = [
 ];
 
 cardDeck.sort(() => 0.5 - Math.random());
-
-function beginGame() {
-  createCardGrid();
-}
-beginGame();
 
 function createCardGrid() {
   for (let i = 0; i < cardDeck.length; i++) {
@@ -129,9 +124,19 @@ function enableClick() {
   }
 }
 
-let cardsMatched = 0;
 function checkWin() {
   if (cardsMatched === cardDeck.length / 2) {
     alert("Congratulations you are a true Saiyan!");
   }
 }
+
+function beginGame() {
+  removeCards();
+  cardsMatched = 0;
+  cardsChosen = [];
+  cardsChosenId = [];
+  createCardGrid();
+}
+beginGame();
+const restartButton = document.querySelector(".button");
+restartButton.onclick = beginGame;
