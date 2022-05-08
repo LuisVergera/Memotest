@@ -78,10 +78,6 @@ function flipCard() {
   cardsChosenId.push(cardId);
   this.setAttribute("src", cardDeck[cardId].img);
   checkMatch();
-<<<<<<< Updated upstream
-  checkWin();
-=======
->>>>>>> Stashed changes
 }
 const cards = document.getElementsByClassName("cards");
 
@@ -89,10 +85,7 @@ function checkMatch() {
   let cardsChosen1 = cardsChosen[0];
   let cardsChosen2 = cardsChosen[1];
   if (cardsChosen.length === 2) {
-<<<<<<< Updated upstream
-=======
     disableClick();
->>>>>>> Stashed changes
     setTimeout(() => {
       if (
         cardsChosen1 === cardsChosen2 &&
@@ -101,24 +94,20 @@ function checkMatch() {
         console.log("match");
         cardsChosen = [];
         cardsChosenId = [];
+        enableClick();
       } else {
         cards[cardsChosenId[0]].setAttribute("src", "images/cards2.png");
         cards[cardsChosenId[1]].setAttribute("src", "images/cards2.png");
         cardsChosen = [];
         cardsChosenId = [];
+        enableClick();
       }
-<<<<<<< Updated upstream
-    }, 750);
-=======
     }, 1000);
->>>>>>> Stashed changes
   }
 }
 
 let cardsChosen = [];
 let cardsChosenId = [];
-<<<<<<< Updated upstream
-=======
 
 function removeCards() {
   while (grid.firstChild) {
@@ -137,4 +126,3 @@ function enableClick() {
     cards[i].style.pointerEvents = "auto";
   }
 }
->>>>>>> Stashed changes
