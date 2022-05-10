@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server",
+    "cypress-run": "cypress run",
+    "cypress-dev": "cypress open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/LuisVergera/Memotest/issues"
   },
-  "homepage": "https://github.com/LuisVergera/Memotest#readme"
+  "homepage": "https://github.com/LuisVergera/Memotest#readme",
+  "devDependencies": {
+    "cypress": "^9.6.0"
+  }
 }
