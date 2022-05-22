@@ -16,4 +16,9 @@ context("Memotest", () => {
   it("verify that cards can be clicked", () => {
     cy.get(".cards").click({ multiple: true });
   });
+  it("makes sure cards are random", () => {
+    cy.get(".cards").then((cards) => {
+      newCards;
+    });
+  });
 });
