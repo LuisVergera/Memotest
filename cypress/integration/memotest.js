@@ -18,7 +18,19 @@ context("Memotest", () => {
   });
   it("makes sure cards are random", () => {
     cy.get(".cards").then((cards) => {
-      newCards;
+      let originalClasses = [];
+      cards.each(function (i, card) {
+        originalClasses.push(cards.className);
+      });
+
+      cy.visit(URL);
+
+      let newClasses = [];
+      cy.get(".cards").then((newCards) => {
+        newCards.each(function (i, card) {
+          newClasses.push(cards.className);
+        });
+        cy.wrap(originalClasses).should('not.deep.equal', newClasses);
     });
   });
 });
