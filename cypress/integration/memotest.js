@@ -42,6 +42,8 @@ context("Memotest", () => {
         pairList = Object.values(pairMap);
         pairList[0][0].click();
         pairList[1][0].click();
+
+        cy.get(".cards").should("have.length", CARDS_NUMBER);
       });
     });
   });
