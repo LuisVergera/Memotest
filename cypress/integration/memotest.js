@@ -39,6 +39,9 @@ context("Memotest", () => {
     it("pick a wrong combination", () => {
       cy.get(".cards").then((cards) => {
         pairMap = ObtainCardPair(cards);
+        pairList = Object.values(pairMap);
+        pairList[0][0].click();
+        pairList[1][0].click();
       });
     });
   });
