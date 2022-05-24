@@ -34,4 +34,12 @@ context("Memotest", () => {
       });
     });
   });
+  describe("resolve game", () => {
+    let pairMap, pairList;
+    it("pick a wrong combination", () => {
+      cy.get(".cards").then((cards) => {
+        pairMap = ObtainCardPair(cards);
+      });
+    });
+  });
 });
