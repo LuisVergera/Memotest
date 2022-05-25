@@ -48,3 +48,20 @@ context("Memotest", () => {
     });
   });
 });
+
+function ObtainCardPair(cards) {
+  const pairs = {};
+
+  cards.each((i, card) => {
+    const cardName = card.name;
+
+    if (pairs[cardName]) {
+      pairs[cardName].push(card);
+    } else {
+      pairs[cardName] = [card];
+    }
+  });
+
+  console.log(pairs);
+  return pairs;
+}
